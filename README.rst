@@ -1,6 +1,7 @@
 ===========
 QEMU README
 ===========
+Migrated from https://github.com/XUANTIE-RV/qemu.git
 
 QEMU is a generic and open source machine & userspace emulator and
 virtualizer.
