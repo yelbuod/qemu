@@ -973,6 +973,8 @@ static void mmext_mld(void *md, target_ulong rs1, target_ulong s2,
                       mmext_ld_fn *ld_elem, mmext_set_elem *set_elem,
                       CPURISCVState *env, uint8_t esz, uintptr_t ra,
                       bool streaming){
+    //qemu_log_mask(MY_LOG_LOAD | MY_LOG_MAT_LOAD | MY_LOG_ALL, "Entering mmext_mld: addr=0x" TARGET_FMT_lx", stride=" TARGET_FMT_ld "\n", rs1, s2);
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_MAT_LOAD | MY_LOG_ALL, "ml:0x" TARGET_FMT_lx "\n", rs1);
     uint32_t i, k;
     target_ulong addr;
 
@@ -1030,6 +1032,8 @@ GEN_MMEXT_LD_HELPER(msld_d, ld_d, set_elem_d, 3, true)
 static void mmext_mldm(void *md, target_ulong rs1, uint8_t nf,
                        mmext_ld_fn *ld_elem, mmext_set_elem *set_elem,
                        CPURISCVState *env, uint8_t esz, uintptr_t ra){
+    // qemu_log_mask(MY_LOG_LOAD | MY_LOG_MAT_LOAD | MY_LOG_ALL, "Entering mmext_mldm: addr=0x" TARGET_FMT_lx ", nf=%d\n", rs1, nf);
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_MAT_LOAD | MY_LOG_ALL, "ml:0x" TARGET_FMT_lx "\n", rs1);
     uint32_t n, i, k;
     target_ulong addr;
 
@@ -1110,6 +1114,8 @@ static void mmext_mst(void *ms3, target_ulong rs1, target_ulong s2,
                       mmext_st_fn *st_elem, mmext_get_elem *get_elem,
                       CPURISCVState *env, uint8_t esz, uintptr_t ra,
                       bool streaming){
+    //qemu_log_mask(MY_LOG_STORE | MY_LOG_MAT_STORE | MY_LOG_ALL, "Entering mmext_mst: addr=0x" TARGET_FMT_lx", stride=" TARGET_FMT_ld "\n", rs1, s2);
+    qemu_log_mask(MY_LOG_STORE | MY_LOG_MAT_STORE | MY_LOG_ALL, "ms:0x" TARGET_FMT_lx "\n", rs1);
     uint32_t i, k;
     target_ulong addr;
 
@@ -1163,6 +1169,8 @@ GEN_MMEXT_ST_HELPER(msst_d, st_d, get_elem_d, 3, true)
 static void mmext_mstm(void *ms3, target_ulong rs1, uint8_t nf,
                        mmext_st_fn *st_elem, mmext_get_elem *get_elem,
                        CPURISCVState *env, uint8_t esz, uintptr_t ra){
+    // qemu_log_mask(MY_LOG_STORE | MY_LOG_MAT_STORE | MY_LOG_ALL, "Entering mmext_mstm: addr=0x" TARGET_FMT_lx", nf=%d\n", rs1, nf);
+    qemu_log_mask(MY_LOG_STORE | MY_LOG_MAT_STORE | MY_LOG_ALL, "ms:0x" TARGET_FMT_lx "\n", rs1);
     uint32_t n, i, k;
     target_ulong addr;
 

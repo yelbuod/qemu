@@ -67,6 +67,12 @@ static inline bool qemu_log_separate(void)
 /* LOG_STRACE is used for user-mode strace logging. */
 #define LOG_STRACE         (1 << 19)
 
+#define MY_LOG_LOAD        (1 << 20)
+#define MY_LOG_STORE       (1 << 21)
+#define MY_LOG_MAT_LOAD    (1 << 22)
+#define MY_LOG_MAT_STORE   (1 << 23)
+#define MY_LOG_ALL         (1 << 24)
+
 /* Lock output for a series of related logs.  Since this is not needed
  * for a single qemu_log / qemu_log_mask / qemu_log_mask_and_addr, we
  * assume that qemu_loglevel_mask has already been tested, and that

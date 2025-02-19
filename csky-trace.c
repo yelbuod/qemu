@@ -17,6 +17,7 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 #include "qemu/osdep.h"
+#include "qemu/log.h"
 #include "cpu.h"
 #include "exec/tracestub.h"
 #include "exec/helper-proto.h"
@@ -407,72 +408,84 @@ static void helper_trace_ldst(CPUArchState *env, target_ulong pc,
 void helper_trace_ld8u(CPUArchState *env, target_ulong pc,
                        target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_ALL, "l:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, LD8U);
 }
 
 void helper_trace_ld16u(CPUArchState *env, target_ulong pc,
                         target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_ALL, "l:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, LD16U);
 }
 
 void helper_trace_ld32u(CPUArchState *env, target_ulong pc,
                         target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_ALL, "l:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, LD32U);
 }
 
 void helper_trace_ld64u(CPUArchState *env, target_ulong pc,
                         target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_ALL, "l:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, LD64U);
 }
 
 void helper_trace_ld8s(CPUArchState *env, target_ulong pc,
                        target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_ALL, "l:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, LD8S);
 }
 
 void helper_trace_ld16s(CPUArchState *env, target_ulong pc,
                         target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_ALL, "l:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, LD16S);
 }
 
 void helper_trace_ld32s(CPUArchState *env, target_ulong pc,
                         target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_ALL, "l:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, LD32S);
 }
 
 void helper_trace_ld64s(CPUArchState *env, target_ulong pc,
                         target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_LOAD | MY_LOG_ALL, "l:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, LD64S);
 }
 
 void helper_trace_st8(CPUArchState *env, target_ulong pc,
                       target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_STORE | MY_LOG_ALL, "s:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, ST8);
 }
 
 void helper_trace_st16(CPUArchState *env, target_ulong pc,
                        target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_STORE | MY_LOG_ALL, "s:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, ST16);
 }
 
 void helper_trace_st32(CPUArchState *env, target_ulong pc,
                        target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_STORE | MY_LOG_ALL, "s:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, ST32);
 }
 
 void helper_trace_st64(CPUArchState *env, target_ulong pc,
                        target_ulong rz, target_ulong addr)
 {
+    qemu_log_mask(MY_LOG_STORE | MY_LOG_ALL, "s:0x" TARGET_FMT_lx "\n", addr);
     helper_trace_ldst(env, pc, rz, addr, ST64);
 }
 

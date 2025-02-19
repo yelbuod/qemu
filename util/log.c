@@ -336,6 +336,11 @@ const QEMULogItem qemu_log_items[] = {
       "log every user-mode syscall, its input, and its result" },
     { CPU_TB_TRACE, "tb_trace",
       "log all beginning PC of TranslationBlock" },
+    { MY_LOG_LOAD,  "load_log", "log every load access"},
+    { MY_LOG_STORE, "store_log", "log every store access"},
+    { MY_LOG_MAT_LOAD,  "mat_load_log", "log only matrix access"},
+    { MY_LOG_MAT_STORE, "mat_store_log", "log only matrix store access"},
+    { MY_LOG_ALL, "all_log", "log all access"},
     { 0, NULL, NULL },
 };
 
